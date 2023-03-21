@@ -1,0 +1,20 @@
+<section class="container">
+  <h2 class="title">Transfers</h2>
+  <table class="table">
+    <thead class="table__header">
+      <th class="table__header__content">Date</th>
+      <th class="table__header__content">Value</th>
+      <th class="table__header__content">Destination</th>
+    </thead>
+    <tbody>
+      <tr class="table__row" *ngFor="let transferItem of transferObjs">
+        <td class="table__content">{{transferItem.date | date: "short"}}</td>
+        <td class="table__content">{{transferItem.value | currency}}</td>
+        <td class="table__content">{{transferItem.destination}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #emptyList>
+    <p>No registered operation</p>
+  </ng-template>
+</section>
